@@ -1,1 +1,6 @@
-import
+
+
+export const HomeScreen = () => {
+    return ()
+}
+
