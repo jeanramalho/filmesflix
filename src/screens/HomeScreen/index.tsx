@@ -7,7 +7,7 @@ import {
   StyleSheet,
   Text,
 } from "react-native";
-import React, { useEffect, useMemo } from "react";
+import React from "react";
 
 import Icons from "@expo/vector-icons/MaterialCommunityIcons";
 
