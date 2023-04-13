@@ -8,7 +8,7 @@ import {
   Text,
 } from "react-native";
 import React from "react";
-import styles from './styles'
+import styles from './style'
 import Icons from "@expo/vector-icons/MaterialCommunityIcons";
 
 
@@ -17,34 +17,12 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <ScrollView style={styles.scrollContainer} >
-        <View
-          style={{
-            aspectRatio: POSTER_ASPECT_RATIO,
-            width: "100%",
-            position: "relative",
-          }}
-        >
-          {featuredMovie ? (
-            <Image
-              source={{
-                uri: `${MOVIE_IMAGE_URL}/${
-                  featuredMovie.poster_path || featuredMovie.backdrop_path
-                }`,
-              }}
-              resizeMode="cover"
-              style={StyleSheet.absoluteFill}
-            />
-          ) : (
-            <View
-              style={{
-                alignItems: "center",
-                justifyContent: "center",
-                flex: 1,
-              }}
-            >
+       
+          
+            
               <ActivityIndicator />
             </View>
-          )}
+          
           <LinearGradient
             colors={[theme.colors.background, "transparent"]}
             start={{
