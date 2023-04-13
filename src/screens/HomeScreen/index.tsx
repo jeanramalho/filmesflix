@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import React from "react";
 import styles from './styles'
-import { useTheme } from "@react-navigation/native";
 import Icons from "@expo/vector-icons/MaterialCommunityIcons";
 
 
@@ -17,12 +16,7 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView
-        style={{
-          flex: 1,
-          backgroundColor: theme.colors.background,
-        }}
-      >
+      <ScrollView style={styles.scrollContainer} >
         <View
           style={{
             aspectRatio: POSTER_ASPECT_RATIO,
