@@ -8,83 +8,11 @@ import {
   Text,
 } from "react-native";
 import React, { useEffect, useMemo } from "react";
-import {
-  MOVIE_API_URL,
-  MOVIE_IMAGE_URL,
-  POSTER_ASPECT_RATIO,
-} from "../utils/constants";
+
 import Icons from "@expo/vector-icons/MaterialCommunityIcons";
-import { THE_MOVIE_DB_API_KEY } from "@env";
-import { useQuery } from "@tanstack/react-query";
-import {
-  IMoveListItem as MoveListItemType,
-  IMoveList,
-} from "../types/move-list";
-import { RootStackScreenProps } from "../navigators/RootNavigator";
-import MoviesHorizontalList from "../components/MoviesHorizontalList";
-import { LinearGradient } from "expo-linear-gradient";
-import { useTheme } from "@react-navigation/native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-const fetchPopularMoves = async (): Promise<IMoveList> => {
-  const res = await fetch(`${MOVIE_API_URL}/movie/popular`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${THE_MOVIE_DB_API_KEY}`,
-    },
-  });
 
-  const data = await res.json();
-  return data;
-};
-const fetchNowPlayingMovies = async (): Promise<IMoveList> => {
-  const res = await fetch(`${MOVIE_API_URL}/movie/now_playing`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${THE_MOVIE_DB_API_KEY}`,
-    },
-  });
-
-  const data = await res.json();
-  return data;
-};
-const fetchUpcomingMovies = async (): Promise<IMoveList> => {
-  const res = await fetch(`${MOVIE_API_URL}/movie/upcoming`, {
-    method: "GET",
-    headers: {
-      Authorization: `Bearer ${THE_MOVIE_DB_API_KEY}`,
-    },
-  });
-
-  const data = await res.json();
-  return data;
-};
-
-const HomeScreen = ({ navigation }: RootStackScreenProps<"Home">) => {
-  const popularMoviesQuery = useQuery(["popular-movies"], fetchPopularMoves);
-  const nowPlayingMoviesQuery = useQuery(
-    ["now-polaying-movies"],
-    fetchNowPlayingMovies
-  );
-  const upcomingQuery = useQuery(["upcoming-movies"], fetchUpcomingMovies);
-  const theme = useTheme();
-  const insets = useSafeAreaInsets();
-  const featuredIndex = useMemo(() => Math.floor(Math.random() * 19), []);
-  const featuredMovie = useMemo(
-    () =>
-      nowPlayingMoviesQuery.isSuccess
-        ? nowPlayingMoviesQuery.data.results[featuredIndex]
-        : null,
-    [nowPlayingMoviesQuery, featuredIndex]
-  );
-
-  useEffect(() => {
-    navigation.setOptions({
-      headerShown: false,
-    });
-
-    return () => {};
-  }, [navigation, theme]);
+const HomeScreen = () => {
 
   return (
     <View style={{ flex: 1, position: "relative" }}>
