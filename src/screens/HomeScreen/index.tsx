@@ -10,19 +10,17 @@ import {
 import React from "react";
 import styles from './style'
 import Icons from "@expo/vector-icons/MaterialCommunityIcons";
+import Poster from '../../components/Poster'
 
 
 const HomeScreen = () => {
 
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.scrollContainer} >
-       
-          
-            
-              <ActivityIndicator />
-            </View>
-          
+      <ScrollView style={styles.scrollContainer} >       
+          <Poster />            
+          <ActivityIndicator />
+
           <LinearGradient
             colors={[theme.colors.background, "transparent"]}
             start={{
