@@ -36,14 +36,7 @@ const HomeScreen = () => {
               x: 0,
               y: 0,
             }}
-            style={{
-              height: "40%",
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              right: 0,
-              zIndex: 2,
-            }}
+            style={styles.linearStyle}
           />
 
           <View style={[StyleSheet.absoluteFill, { zIndex: 2, padding: 16 }]}>
