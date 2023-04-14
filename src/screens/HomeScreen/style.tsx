@@ -13,6 +13,15 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: theme.colors.background,
     }
+
+    linearStyle: {
+        height: "40%",
+        position: "absolute",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        zIndex: 2,
+    }
 })
 
 export default styles
