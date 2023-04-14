@@ -10,9 +10,7 @@ const Poster = ({pontos, participante}) => {
       <View style={styles.container}>
                    <Image
               source={{
-                uri: `${MOVIE_IMAGE_URL}/${
-                  featuredMovie.poster_path || featuredMovie.backdrop_path
-                }`,
+                uri: `https://m.media-amazon.com/images/I/81jEuP2Dn1L.jpg`,
               }}
               resizeMode="cover"
               style={StyleSheet.absoluteFill}
