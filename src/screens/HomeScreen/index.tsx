@@ -10,10 +10,15 @@ import {
 import React from "react";
 import styles from './style'
 import Icons from "@expo/vector-icons/MaterialCommunityIcons";
+import { LinearGradient } from "expo-linear-gradient";
+import { useTheme } from "@react-navigation/native";
+
 import Poster from '../../components/Poster'
 
 
 const HomeScreen = () => {
+
+  const theme = useTheme()
 
   return (
     <View style={styles.container}>
